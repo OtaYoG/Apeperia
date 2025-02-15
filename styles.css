@@ -1,0 +1,688 @@
+/* Reset Css */
+* {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* --Cores-- */
+
+:root {
+    --branco: #FFF;
+    --azul-claro: #DFE3E5;
+    --vermelho-forte: #B72E2E;
+    --cinza-escuro: #4F4C4C;
+    --cinza-claro: #F7F4F4;
+    --cinza-medio: #D9D9D9;
+        
+    --fonte-link: #0084FF;
+    --fonte-cinza: #666;
+    --borda-cabecalho-mobile: #103D4A;
+    --bg-rodape: #333;
+    --bg-chamada-mobile: #00161C;
+
+    --planos-cartao-start: #56CCF2;
+    --planos-cartao-ultra: #B04CD9;
+    --planos-cartao-mega: #E33B3B;
+}
+
+/* --Base Css-- */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*-- Esta classe container, irá posicionar o espaçamento esq e dir de tds os textos e botões em todo site --*/
+.container { 
+    padding-right: 6%;
+    padding-left: 6%;
+}
+
+.botao {   /* -- classe definida para todos os botôes do site--*/
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    border: 1px solid var(--branco);
+    border-radius: 5px;
+}
+
+/* --Cabeçalho-- */
+
+.cabecalho {
+    color: var(--branco);
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    border-bottom: 1px solid var(--borda-cabecalho-mobile);
+    position:absolute;
+}
+
+.cabecalho__logo {
+    margin-bottom: 1rem;
+}
+
+.cabecalho__navegacao {
+    text-align: center;
+}
+
+.cabecalho__link {
+    font-size: 1.1rem;
+    display: inline-block;
+    margin-right: .7rem;
+    margin-bottom: 1.25rem;
+    margin-left: .7rem;
+    transition: .3s;
+}
+
+.cabecalho__link:hover {
+    color: var(--vermelho-forte);
+}
+
+
+/* --Section Chamada-- */
+
+.chamada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-chamada-mobile);  /* -- BG também só irá aparecer após incluir o padding-top--*/
+    padding-top: 12.25rem;  /* -- Este paddin-top, tras para baixo o h1,p e link que não estavam aparecendo*/
+    padding-bottom: 2.5rem;
+    color: var(--branco);
+    text-align: center;
+}
+
+.chamada__titulo {
+    font-family: "montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.chamada__texto {
+    font-size: 1.25rem;
+    line-height: normal;  /* -- Espaçamento entre o texto nas linhas superior. e inferior, dá mais respiro para leitura--*/
+    margin: 0 auto 2.5rem;
+}
+
+.chamada__botao {
+   
+    transition: .3s;
+}
+
+.chamada__botao:hover {
+    color: var(--vermelho-forte)
+}
+
+
+/* --Section Destaques-- */
+
+.destaques {
+    background-color: var(--azul-claro);
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+.destaques__titulo {
+    color: var(--cinza-escuro);
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: "montserrat", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.destaques__painel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.destaques__painel-imagem {
+    width: 100vw;
+    max-width: 600px;
+    box-shadow: 0 2px 10px 5px #00000020;
+    margin-bottom: 1rem;
+}
+
+.destaques__painel-texto {
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: normal;
+    margin-top: .5rem;
+}
+
+.destaques__botao {
+    color: var(--vermelho-forte);
+    border-color: var(--vermelho-forte);
+    margin: 0 auto;
+}
+
+
+
+/* ---Section Diferenciais-- */
+
+.diferenciais {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.diferenciais__lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.diferenciais__item {
+    max-width: 350px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: top 1.25rem left 2.5rem;
+    padding: 2rem 0 2rem 5rem;
+}
+
+.diferenciais__item--tempo {
+    background-image: url(img/icone-relogio.png);
+}
+
+.diferenciais__item--foco {
+    background-image: url(img/icone-dinheiro.png);
+}
+
+.diferenciais__item--especialistas {
+    background-image: url(img/icone-quimica.png);
+}
+
+.item__titulo {
+    color: var(--cinza-escuro);
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.item__texto {
+    line-height: normal;
+}
+
+
+
+    /* --Section Sobre-- */
+
+    .sobre {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .sobre__titulo {
+        color: var(--cinza-escuro);
+        font-weight: 700;
+        font-size: 1.5rem;
+        font-family: "montserrat", sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 1.25rem;
+    }
+
+    .sobre__texto {
+        line-height: normal;
+        margin-bottom: 1rem;
+    }
+
+    .sobre__texto--destaque {
+        color: var(--cinza-escuro);
+        font-weight: 700;
+    }
+
+    .sobre__plataformas {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-bottom: 1rem;
+    }
+
+    .sobre__imagem {
+        display: none;
+    }
+
+
+/* --Section Planos-- */
+
+.planos {
+    background-color: var(--cinza-claro);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.planos__titulo {
+    color: var(--cinza-escuro);
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: "montserrat", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+.planos__cartoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cartao {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--branco);
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px 2 #00000010;
+}
+
+.cartao__titulo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: .75rem 0;
+    margin-bottom: .5rem;
+    border-bottom: 1px solid var(--azul-claro);
+}
+
+.cartao__conteudo {
+    padding: 0 15%;
+}
+
+.cartao__preco {
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.cartao__texto {
+    color: var(--fonte-cinza);
+    line-height: 28px;
+}
+.cartao__botao {
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 100%;
+    align-self: center;  /*--Pesquisar para saber mais sobre essa propriedade--*/
+    padding: .75rem 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+/* --Cores Títulos-- */
+.cartao--start {
+    color: var(--planos-cartao-start);
+}
+
+.cartao--ultra {
+    color: var(--planos-cartao-ultra);
+}
+
+.cartao--mega {
+    color: var(--planos-cartao-mega);
+}
+
+
+/* --Cores Botões-- */
+
+.cartao__botao--start {
+    border-color: var(--planos-cartao-start);
+    transition: .3s;
+}
+
+.cartao__botao--start:hover {
+    color:var(--branco);
+    background-color: var(--planos-cartao-start);
+}
+
+.cartao__botao--ultra {
+    border-color: var(--planos-cartao-ultra);
+    transition: .3s;
+}
+
+.cartao__botao--ultra:hover {
+    color:var(--branco);
+    background-color: var(--planos-cartao-ultra);
+}
+
+.cartao__botao--mega {
+    border-color: var(--planos-cartao-mega);
+    transition: .3s;
+}
+
+.cartao__botao--mega:hover {
+    color: var(--branco);
+    background-color: var(--planos-cartao-mega);
+}
+
+
+/* --Section Contato-- */
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.contato__titulo {
+    color: var(--cinza-escuro);
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: "montserrat", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+.contato__botao {
+    color: var(--cinza-escuro);
+    border-color: var(--cinza-escuro);
+    margin-top: 1rem;
+    transition: .3s;
+}
+
+.contato__botao:hover {
+    color: var(--branco);
+    background-color: var(--cinza-escuro);
+}
+
+/* --Section Institucional-- */
+
+.institucional {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--fonte-cinza);
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.institucional__titulo {
+    color: var(--cinza-escuro);
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: "montserrat", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.institucional__descricao {
+    margin-bottom: 2rem;
+}
+
+.institucional__endereco {
+    font-size: 1.5rem;
+    line-height: normal;
+}
+
+.institucional__contato {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-top: 2rem;
+}
+
+.instucional__contato-telefone {
+    line-height: normal;
+}
+
+.institucional__contato-email {
+    color: var(--fonte-link);
+    text-decoration: underline;
+    display: block;
+}
+
+.institucional__video {
+    width: 100%;   
+}
+
+
+/* --Footer-- */
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-rodape);
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+.rodape__social {
+    display: flex;
+}
+
+.rodape__midia {
+    display: block;
+    width: 42px;
+    height: 42px;
+    margin: 2rem 1rem;
+}
+
+.rodape__navegacao {
+    color: var(--branco);
+    text-align: center;
+    line-height: 3;
+}
+
+.rodape__link {
+    display: inline-block;
+    margin: 0 .5rem .7rem;
+    transition: .3s;
+}
+
+.rodape__link:hover {
+    color: var(--vermelho-forte);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ---Media Screen- */
+
+    /* --Container-- */
+
+    @media screen and (min-width: 1024px) {
+        .container {
+            padding-left: calc((100% - 940px)/2);
+            padding-right: calc((100% - 940px)/2);
+        }
+    }
+
+    /* --Cabeçalho-- */
+
+    @media screen and (min-width: 1024px) {
+        .cabecalho {
+            flex-direction: row;
+            justify-content: space-between;
+            border: none;
+        }
+    }
+
+    /* --Media Screen Section Chamada-- */
+@media screen and (min-width: 768px){
+    .chamada__texto {
+        max-width: 600px;
+    }   
+}
+
+@media screen and (min-width: 1024px) {
+    .chamada{
+        background-image: url(img/bg-banner.jpg);
+        background-size: cover;
+    }
+    .chamada__titulo {
+        font-size: 3.25rem;
+        margin-bottom: 2rem;
+    }
+}
+
+
+/* --Media screen Section Diferenciais-- */
+
+@media screen and (min-width: 1024px) {
+    .diferenciais {
+        background-color: var(--cinza-claro);
+    }
+    .diferenciais__lista {
+        justify-content: space-around;
+    }
+}
+
+
+    /* --Media screen Section Sobre-- */
+
+    @media screen and (min-width: 1024px) {
+        .sobre {
+            display: flex;
+        }
+
+        .sobre__conteudo {
+            margin-right: 3rem;
+        }
+        
+        .sobre__titulo {
+            text-align: left;
+        }
+
+        .texto-media { /*--minha sugestão de classe para alinhar o texto ao centro--*/
+            text-align: center;   
+        }
+
+        .sobre__texto--divisao {
+            border-bottom: 1px solid var(--cinza-medio);
+            padding-bottom: 1.5rem;
+        }
+
+        .sobre__imagem {
+            display: block;
+        }
+    }
+
+    /* --Media screen Section Planos-- */
+
+    @media screen and (min-width: 768) {
+        .cartao {
+            max-width: 400px;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .planos__cartoes {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .cartao{
+            max-width: 300px;
+        }
+    }
+
+    /* --Media screen Section Institucional-- */
+
+    @media screen and (min-width: 768px) {
+        .institucional__contato-email {
+            display: inline-block;
+        }
+        .institucional__video {
+            width: 100%;
+            margin-top: 2rem;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .institucional__conteudo {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+        }
+        .institucional__video {
+            align-self: flex-end;
+            width: 375px;   
+        }
+        .isntitucional__contato-email {
+            display: block; 
+        }   
+    }
+
+    /* --Media screen Footer-- */
+
+ @media screen and (min-width: 1024px) {
+    .rodape {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .rodape__navegacao {
+        text-align: left;
+        min-width: 600px;
+    }
+ }
